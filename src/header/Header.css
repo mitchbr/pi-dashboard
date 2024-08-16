@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  justify-content:space-between;
+}
+
+.header__front {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > * {
+  align-self: center;
+}
+
+.header__logo {
+  height: 3rem;
+}
+
+span {
+  margin: .5rem;
+}
