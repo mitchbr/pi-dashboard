@@ -3,21 +3,27 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start-client": "vite",
+    "start-client": "vite --host",
     "build-client": "tsc -b && vite build",
     "build-server": "rimraf ./dist && tsc",
     "start-server": "ts-node server/server.ts",
+    "build": "concurrently --kill-others-on-fail \"npm run build-server\" \"npm run build-client\"",
     "start": "concurrently --kill-others-on-fail \"npm run start-server\" \"npm run start-client\"",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
     "express": "^4.19.2",
     "os": "^0.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
     "react-use-websocket": "^4.8.1",
+    "rimraf": "^6.0.1",
     "systeminformation": "^5.23.4",
     "websocket": "^1.0.35",
     "ws": "^8.18.0"

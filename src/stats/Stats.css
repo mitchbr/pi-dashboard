@@ -4,3 +4,19 @@
   border-radius: 50%;
   display: inline-block;
 }
+
+.connection-status {
+  display: flex;
+  align-items: center;
+}
+
+.stat {
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+}
+
+.box-data {
+  display: flex;
+  justify-content: start;
+}

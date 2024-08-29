@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: .
+      target: build
+    volumes:
+    - ./:/app
+    - /app/node_modules
+    ports:
+    - 4000:4000
+    - 4001:4001
+    - 5173:5173
+    pid: "host" # enables the `systeminfo` package to retrieve data from the host machine
+    command: npm run start
