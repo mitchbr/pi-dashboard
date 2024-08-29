@@ -19,6 +19,15 @@ function Portfolio() {
                 <p>Let's connect on LinkedIn!</p>
               </a>
             </div>
+            <div className="page__body-content__item">
+              <a href="https://github.com/mitchbr/pi-dashboard" target="_blank" className="link">
+                <div className="page__body-content__title_icon">
+                  <h3>Pi Dashboard GitHub</h3>
+                  <OpenInNewIcon fontSize="small" />
+                </div>
+                <p>View this website's GitHub repository</p>
+              </a>
+            </div>
           </div>
         </div>
 
