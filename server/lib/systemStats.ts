@@ -25,7 +25,6 @@ async function getMemoryUsage() {
 
 async function getDockerInfo() {
   const dockerInfo = await si.dockerInfo();
-  // console.log(dockerInfo)
   return {
     containers: dockerInfo.containers,
     running: dockerInfo.containersRunning,
@@ -43,6 +42,8 @@ export async function getSystemDetails() {
   const memUsage = await getMemoryUsage();
   const cpuTemp = await getCpuTemp();
   const dockerInfo = getDockerInfo();
+
+  console.log(dockerInfo)
 
   return {
     cpuTemp,
