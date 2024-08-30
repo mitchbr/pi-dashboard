@@ -41,7 +41,7 @@ export async function getSystemDetails() {
   const cpuUsage = await getCpuUsage();
   const memUsage = await getMemoryUsage();
   const cpuTemp = await getCpuTemp();
-  const dockerInfo = getDockerInfo();
+  const dockerInfo = await getDockerInfo();
 
   console.log(dockerInfo)
 
