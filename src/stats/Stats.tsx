@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
 
+import endpoint from '../endpoints.config';
 import "../pages.css";
 import "./Stats.css";
 
 function Stats() {
-  const socketUrl = 'ws://localhost:4001';
+  const socketUrl = endpoint.wsUrl;
   const [wsData, setWsData] = useState({
     cpuTemp: 0,
     cpuUsage: 0,

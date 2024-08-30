@@ -22,7 +22,7 @@ function Home() {
             <div className="page__body-content__item">
               <Link to="/stats/" className="link">
                 <h3>Pi Stats</h3>
-                <p>View the current CPU and memory usage, as well as docker container information</p>
+                <p>View the current CPU and memory usage</p>
               </Link>
             </div>
             <div className="page__body-content__item">
