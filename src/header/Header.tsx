@@ -15,8 +15,8 @@ function Header() {
         </div>
         <div className='header__right'>
           <div className='header__right-internal__links'>
-            <span><Link className="header-text" to="/stats"> Stats </Link></span>
             <span><Link className="header-text" to="/portfolio"> Portfolio </Link></span>
+            <span><Link className="header-text" to="/stats"> Stats </Link></span>
           </div>
           <div className='header__right-external__links'>
             <span><a className="header-text" href="https://mitchbr.github.io/grocery_list_web/" target="_blank"> Groceries </a></span>
