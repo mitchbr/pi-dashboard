@@ -3,6 +3,7 @@
   height: auto;
   min-height: calc(100vh - 5rem);
   width: 80%;
+  min-width: 1152px;
   padding: 2rem;
 }
 
