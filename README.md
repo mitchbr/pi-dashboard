@@ -5,3 +5,17 @@ Welcome to my raspberry pi hub! Here, I have everything I am currently hosting o
 - Self hosting so that I don't need to rely on free tiers with cloud hosting providers
 - Learning about more of the infrastructure side of backend development, including standing up docker containers from scratch, developing my own CI/CD pipelines, or standing up databases from scratch and managing them in a linux "server" environment
 - Learning more about React and other fullstack skills
+
+## Setting up and starting the service on a raspberry pi
+
+sudo systemctl start pidash.service
+
+sudo vim /etc/systemd/system/pidash.service
+---- Contents ----
+[Unit]
+Description=Pi Dash Web Server
+
+[Service]
+ExecStart=/usr/bin/npm start --prefix /home/mitchbr/Repositories/pi-dashboard
+
+---

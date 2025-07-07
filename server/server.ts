@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import express, { Request, Response } from 'express';
 import WebSocket from 'ws';
 import { getSystemDetails } from "./lib/systemStats";
@@ -29,6 +30,17 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Getting details!');
 });
 
+app.get('/deploy', (req: Request, res: Response) => {
+  exec('(cd .. && make test)',
+    function (error, stdout, stderr) {
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+        if (error !== null) {
+            console.log('exec error: ' + error);
+        }
+    });
+  res.send('deploying...');
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

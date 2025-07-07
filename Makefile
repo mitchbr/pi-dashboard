@@ -1,3 +1,6 @@
+test:
+	echo "hi"
+
 pull:
 	git pull
 
