@@ -7,6 +7,38 @@ function Portfolio() {
     <>
       <div className='page-body'>
         <div className='grid-item grid-text'>
+          <h2>Workouts App</h2>
+        </div>
+        <div className='page-grid workouts-grid'>
+          <div className='grid-item grid-text workouts-top-left'>
+            <p>My first time exploring HTMX, this is a monolith using the Django web framework with a PostgreSQL database. One of the main drivers behind this project was exploring technologies I could use to more quickly stand up projects. Technologies like React are great, but building a monolith using Django and HTMX speeds things up without the need to maintain and deploy both a UI and an API. I’d heard this stack was great for writing minimal code, and I’ve found that to be the case. Adding in Tailwind CSS, the structure of the code is extremely simple. For more “Backend” things, I am very comfortable with the Django framework, and the frontend is as simple as writing HTML with some “extended” capabilities.</p>
+          </div>
+          <div className='grid-item workouts-right'>
+            <img src="workouts_page.png" alt='The main page'></img>
+            <div className="overlay">
+              <div className="overlay-text">The main page, where you can view your workouts in a one-week view</div>
+            </div>
+          </div>
+          <div className='grid-item grid-text workouts-bottom-left'>
+            <a href="https://github.com/mitchbr/workout-journal" target="_blank" className="link">
+              <div className="open-new-icon">
+                <h3>Workouts Github</h3>
+                <OpenInNewIcon fontSize="small" />
+              </div>
+              <p>View the app's GitHub repo in a new tab</p>
+            </a>
+            <div className='list-separator'></div>
+            <a href="https://workouts.mitchbr.dev" target="_blank" className="link">
+              <div className="open-new-icon">
+                <h3>Workouts App</h3>
+                <OpenInNewIcon fontSize="small" />
+              </div>
+              <p>Open the Workouts App in a new tab</p>
+            </a>
+          </div>
+        </div>
+        
+        <div className='grid-item grid-text'>
           <h2>Grocery List App</h2>
         </div>
         <div className='page-grid groceries-grid'>

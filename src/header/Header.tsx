@@ -20,6 +20,7 @@ function Header() {
           </div>
           <div className='header__right-external__links'>
             <span><a className="header-text" href="https://mitchbr.github.io/grocery_list_web/" target="_blank"> Groceries </a></span>
+            <span><a className="header-text" href="https://workouts.mitchbr.dev" target="_blank"> Workouts </a></span>
             <span><a className="header-text" href="https://github.com/mitchbr" target="_blank"> GitHub </a></span>
           </div>
         </div>
