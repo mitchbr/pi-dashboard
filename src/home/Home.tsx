@@ -4,6 +4,20 @@ import '../pages.css';
 import './Home.css';
 
 function Home() {
+  const startDate = new Date('2016-10-01');
+  const today = new Date();
+
+  // Calculate the number of full years
+  let years = today.getFullYear() - startDate.getFullYear();
+
+  // Check if we've passed Oct 1st this year
+  const hasPassedAnniversary = 
+    today.getMonth() > 9 || (today.getMonth() === 9 && today.getDate() >= 1);
+
+  if (!hasPassedAnniversary) {
+    years -= 1;
+  }
+
   return (
     <>
       <div className="page-body">
@@ -61,7 +75,7 @@ function Home() {
           <div className="grid-item home-bottom-right">
             <img src="mitchell_climbing.jpg" alt='Me climbing in Squamish, BC'></img>
             <div className="overlay">
-              <div className="overlay-text">I've climbed for more than 8 years!</div>
+              <div className="overlay-text">I've climbed for more than {years} years!</div>
             </div>
           </div>
         </div>
