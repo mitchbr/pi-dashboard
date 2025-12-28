@@ -1,4 +1,4 @@
-import { exec } from 'child_process';
+import { execSync } from 'child_process';
 import express, { Request, Response } from 'express';
 import WebSocket from 'ws';
 import { getSystemDetails } from "./lib/systemStats";
