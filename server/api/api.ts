@@ -1,10 +1,7 @@
 import express, { type Request, type Response } from 'express';
 import { execSync } from 'child_process';
 
-
 const app = express();
-const port = 4000;
-
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Server running healthy');
@@ -38,6 +35,4 @@ app.get('/deploy', async (req: Request, res: Response) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Server is running at [http://localhost:${port}](http://localhost:3000)`);
-});
+export default app;
