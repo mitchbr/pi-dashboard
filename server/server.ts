@@ -27,19 +27,34 @@ wss.on('connection', (ws: WebSocket) => {
 });
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Getting details!');
+  res.send('Server running healthy');
 });
 
-app.get('/deploy', (req: Request, res: Response) => {
-  exec('(cd .. && make test)',
-    function (error, stdout, stderr) {
-        console.log('stdout: ' + stdout);
-        console.log('stderr: ' + stderr);
-        if (error !== null) {
-            console.log('exec error: ' + error);
-        }
-    });
-  res.send('deploying...');
+app.get('/deploy', async (req: Request, res: Response) => {
+  const logs: Array<string> = [];
+  try {
+    logs.push(`Received deploy request for service: ${req.query.service}`);
+    const options: Array<string> = [
+      'groceries_v2',
+      'stonelifting',
+      'workout-journal'
+    ];
+    if (!req.query.service || !options.includes(req.query.service as string)) {
+      res.status(400).send({ message: 'Invalid service specified', logs });
+      return;
+    }
+
+    const output = await execSync(`(cd ../${req.query.service} &&  make deploy)`).toString();
+    logs.push('Deployment output:');
+    logs.push(...output.split('\n'));
+  } catch (error: object | any) {
+    logs.push('Deployment error:');
+    logs.push(...error.toString().split('\n'));
+    res.status(500).send({ message: 'Deployment failed', logs });
+    return;
+  }
+
+  res.status(200).send({ message: 'Deployment complete', service: req.query.service, logs });
 });
 
 app.listen(port, () => {
