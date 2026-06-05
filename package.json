@@ -17,8 +17,10 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
+    "cors": "^2.8.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "googleapis": "^169.0.0",
     "os": "^0.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -26,6 +28,7 @@
     "react-use-websocket": "^4.8.1",
     "rimraf": "^6.0.1",
     "systeminformation": "^5.23.4",
+    "uuid": "^14.0.0",
     "websocket": "^1.0.35",
     "ws": "^8.18.0"
   },

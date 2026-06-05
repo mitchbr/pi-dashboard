@@ -1,13 +1,14 @@
 import WebSocket from 'ws';
 import { getSystemDetails } from "../lib/systemStats";
+import logger from '../logger';
 
 const wss = new WebSocket.Server({ port: 4001 });
 
 wss.on('connection', (ws: WebSocket) => {
-  console.log('New client connected');
+  logger.log('New client connected');
 
   ws.on('message', async (message: string) => {
-    console.log(`Received message: ${message}`);
+    logger.log(`Received message: ${message}`);
     ws.send(`Server received your message: ${message}`);
   });
 
@@ -17,7 +18,7 @@ wss.on('connection', (ws: WebSocket) => {
   }, 1000);
 
   ws.on('close', () => {
-    console.log('Client disconnected');
+    logger.log('Client disconnected');
   });
 });
 
