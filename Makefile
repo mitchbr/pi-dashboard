@@ -5,8 +5,7 @@ pull:
 	git pull
 
 deploy:
-	sudo npm ci
-	sudo rm -rf dist
+	npm ci
 	npm run build
 	npm run start
 
