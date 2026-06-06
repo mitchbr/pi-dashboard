@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 
 const LOG_DIR = './logs';
 const LOG_FILE = path.join(LOG_DIR, 'pi_dash_logs.log');
@@ -31,7 +31,7 @@ export class Logger {
     const entry: LogEntry = {
       message,
       timestamp: new Date().toISOString(),
-      uuid: uuidv4(),
+      uuid: randomUUID(),
     };
 
     const logLine = this.formatLogEntry(entry) + '\n';
@@ -47,7 +47,7 @@ export class Logger {
     const entry: LogEntry = {
       message: `[ERROR] ${message}`,
       timestamp: new Date().toISOString(),
-      uuid: uuidv4(),
+      uuid: randomUUID(),
     };
 
     const logLine = this.formatLogEntry(entry) + '\n';
@@ -63,7 +63,7 @@ export class Logger {
     const entry: LogEntry = {
       message: `[INFO] ${message}`,
       timestamp: new Date().toISOString(),
-      uuid: uuidv4(),
+      uuid: randomUUID(),
     };
 
     const logLine = this.formatLogEntry(entry) + '\n';
