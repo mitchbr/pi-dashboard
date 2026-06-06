@@ -4,13 +4,12 @@
   "version": "0.0.0",
   "scripts": {
     "start-client": "vite --host",
-    "build-client": "tsc -b && vite build",
-    "build-server": "rimraf ./dist && tsc",
-    "start-server": "ts-node server/server.ts",
+    "build-client": "vite build",
+    "build-server": "rimraf ./dist && tsc -p tsconfig.server.json",
+    "start-server": "tsx server/server.ts",
+    "typecheck": "tsc -b",
     "build": "concurrently --kill-others-on-fail \"npm run build-server\" \"npm run build-client\"",
-    "start": "concurrently --kill-others-on-fail \"npm run start-server\" \"npm run start-client\"",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "concurrently --kill-others-on-fail \"npm run start-server\" \"npm run start-client\""
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -28,7 +27,6 @@
     "react-use-websocket": "^4.8.1",
     "rimraf": "^6.0.1",
     "systeminformation": "^5.23.4",
-    "uuid": "^14.0.0",
     "websocket": "^1.0.35",
     "ws": "^8.18.0"
   },
@@ -44,7 +42,10 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/ws": "^8.5.13",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0",
     "vite": "^5.4.0"
